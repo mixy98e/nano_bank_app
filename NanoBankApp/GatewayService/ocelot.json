@@ -1,0 +1,78 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/Deposit",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "depositservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/deposit",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "depositservice"
+    },
+    {
+      "DownstreamPathTemplate": "/Withdraw",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "withdrawservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Withdraw",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "withdrawservice"
+    },
+    {
+      "DownstreamPathTemplate": "/Transaction",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "transactionservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/transaction",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "transactionservice"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "depositservice",
+      "Config": [
+        {
+          "Name": "depositservice",
+          "Version": "v1",
+          "Url": "http://depositservice:80/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "withdrawservice",
+      "Config": [
+        {
+          "Name": "withdrawservice",
+          "Version": "v1",
+          "Url": "http://withdrawservice:80/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "transactionservice",
+      "Config": [
+        {
+          "Name": "transactionservice",
+          "Version": "v1",
+          "Url": "http://transactionservice:80/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5055"
+  }
+}

@@ -1,0 +1,50 @@
+version: '3.4'
+
+services:
+  depositservice:
+    image: ${DOCKER_REGISTRY-}depositservice
+    build:
+      context: .
+      dockerfile: DepositService/Dockerfile
+    ports:
+      - 5001:80
+
+  accountcheckservice:
+    image: ${DOCKER_REGISTRY-}accountcheckservice
+    build:
+      context: .
+      dockerfile: AccountCheckService/Dockerfile
+    ports:
+      - 5002:80
+
+  withdrawservice:
+    image: ${DOCKER_REGISTRY-}withdrawservice
+    build:
+      context: .
+      dockerfile: WithdrawService/Dockerfile
+    ports:
+      - 5003:80
+
+  transactionservice:
+    image: ${DOCKER_REGISTRY-}transactionservice
+    build:
+      context: .
+      dockerfile: TransactionService/Dockerfile
+    ports:
+      - 5004:80
+
+  paymentactionservice:
+    image: ${DOCKER_REGISTRY-}paymentactionservice
+    build:
+      context: .
+      dockerfile: PaymentActionService/Dockerfile
+    ports:
+      - 5005:80
+
+  gatewayservice:
+    image: ${DOCKER_REGISTRY-}gatewayservice
+    build:
+      context: .
+      dockerfile: GatewayService/Dockerfile
+    ports:
+      - 5055:80

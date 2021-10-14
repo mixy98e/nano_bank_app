@@ -1,1 +1,1 @@
-# nano_bank_app
+# nano-bank-app
