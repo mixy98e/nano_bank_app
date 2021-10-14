@@ -1,3 +1,3 @@
 # salesforce-nodejs-api
 
-- Salesforce Data Abstraction Layer
+- Salesforce Data Abstraction Layer API
