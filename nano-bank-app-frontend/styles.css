@@ -1,0 +1,84 @@
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-right: 1px solid lightgray;
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+.login-form-2 h3{
+    text-align: center;
+}
+.login-container form{
+    padding: 5%;
+}
+.btnSubmit
+{
+    text-align: center;
+    width: 50%;
+    border-radius: 1rem;
+    margin-top: 100px;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+.separator{
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+.btn-group{
+    width: 100% !important;
+}
+
+.acc-data-cont{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.tb-row {
+    height: 300px; overflow: auto
+}
+
+.navbar-brand{
+    text-align: center !important;
+}
+
+.alert{
+    text-align: center;
+}

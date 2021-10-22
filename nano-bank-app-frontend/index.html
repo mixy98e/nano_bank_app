@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <title>NanoBankApp test gui</title>
+    </head>
+
+    <body onload="onloadBody()">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#"><strong>Nano Bank App</strong></a>
+        </nav>
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Action form</h3>
+                    <form>
+                        <div class="form-group">
+                            <label style="margin-left: 20px;" for="exampleFormControlSelect1"><strong>Select Action</strong></label>
+                            <select class="form-control" id="exampleFormControlSelect1" onchange="actionSelect(this)">
+                            <option>Deposit</option>
+                            <option>Withdraw</option>
+                            <option>Transaction</option>
+                            </select>
+                        </div>
+                        <div class="form-group separator"></div>
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control src-input" placeholder="Source account number" onchange="onchangeAccSrc(this)" value="" />
+                        </div>
+                        <div class="form-group dest-acc-num">
+                            <input type="text" class="form-control dest-input" placeholder="Destination account number" onchange="onchangeAccDest(this)" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control amount-input" placeholder="Amount $ __.__" value="" />
+                        </div>
+                        <div class="form-group execute-button">
+                            <input class="btnSubmit" value="Execute action" onclick="executeAction()" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Account Data</h3>
+                    <form>
+                        <div class="acc-data-cont">
+                            <div class="acc-data">
+                                <label style="margin-left: 20px;"><strong>Source Account</strong></label>
+                                <ul class="list-group list-group-flush acc-1">
+                                    <li class="list-group-item li-id">Id</li>
+                                    <li class="list-group-item li-name">Name</li>
+                                    <li class="list-group-item li-address">Address</li>
+                                    <li class="list-group-item li-balance">Balance</li>
+                                    <li class="list-group-item li-status">Status</li>
+                                </ul>
+                            </div>
+                            <div class="acc-data">
+                                <label style="margin-left: 20px;"><strong>Destination Account</strong></label>
+                                <ul class="list-group list-group-flush acc-2">
+                                    <li class="list-group-item li-id">id</li>
+                                    <li class="list-group-item li-name">Name</li>
+                                    <li class="list-group-item li-address">Address</li>
+                                    <li class="list-group-item li-balance">Balance</li>
+                                    <li class="list-group-item li-status">Status</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div  class="alert alert-primary" role="alert">
+                
+            </div>
+            <div  class="alert alert-danger" role="alert">
+                
+            </div>
+            <br>
+            <div class="row tb-row" style="border-top: 1px solid lightgray;">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Action type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Source address</th>
+                        <th scope="col">Destination address</th>
+                        <th scope="col">Creation date</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-body-data">
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <nav class="navbar navbar-light bg-light">
+            <div style="text-align: end; width:100%">
+                Nano_Bank_App demo project © 2021.
+            </div>
+        </nav>
+        
+    </body>
+    <script src="index.js"></script>
+</html>
