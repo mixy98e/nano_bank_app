@@ -1,18 +1,16 @@
 const jsforce = require('jsforce');
 const express = require('express');
+const cors = require('cors');
 
 console.log('jsforce started');
-
-// ovde umesto praznih stringova treba
-// dodati kredencijale za pristup Salesforce
-// nalogu i bazi podataka
 const securityToken = '';
 const username = '';
 const password = '';
 
 const app = express();
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors());
 const port = 3000;
 
 var conn = new jsforce.Connection({
@@ -209,7 +207,7 @@ conn.login(username, password + securityToken, function(err, userInfo) {
             return console.error(err); 
         }
         conn.query(`SELECT Id, Name, ActionType__c, Amount__c, SourceAddress__c, DestinationAddress__c,
-                    CreatedDate FROM PaymentAction__c`, function(err, resSF) {
+                    CreatedDate FROM PaymentAction__c ORDER BY CreatedDate`, function(err, resSF) {
         if (err) {
             return console.error(err);
         }

@@ -31,6 +31,15 @@ namespace GatewayService
             services.AddOcelot(Configuration);
             services.AddSwaggerForOcelot(Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest); // ??????
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORS", builder =>
+                {
+                    builder.AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowAnyOrigin();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +60,8 @@ namespace GatewayService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CORS");
 
             app.UseEndpoints(endpoints =>
             {
